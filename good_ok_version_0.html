@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Vodafone GOOD'OK</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta content="width=device-width, maximum-scale=1.0" name="viewport">
+
+
+  <style type="text/css">
+    body {
+      font-family: 'theme-font', arial, sans-serif;
+      font-size: .9rem;
+      line-height: 1.1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    @font-face {
+      font-family: 'theme-font';
+      font-weight: 400;
+      font-style: normal;
+      src: url("/ncnd/public/fonts/vodafone-regular.woff") format("woff");
+    }
+
+    @font-face {
+      font-family: 'theme-font';
+      font-weight: 700;
+      font-style: normal;
+      src: url("/ncnd/public/fonts/vodafone-bold.woff") format("woff");
+    }
+
+    .play_button {
+      background-image: url("/asset/289321311333/image/goodok_pause_icon2810");
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.9;
+      width: 70px;
+      height: 70px;
+    }
+
+    .pause_button {
+      background-image: url("/asset/289321311333/image/goodok_play_icon2810");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 70px;
+      height: 70px;
+      opacity: 0.9;
+    }
+
+    body {
+      color: white;
+      background-color: #333;
+      margin: 0;
+    }
+
+    .top-page {
+      color: #ffffff;
+    }
+
+    .page-footer {
+      text-align: center;
+      background-color: #434343;
+      color: #fafafa;
+      font-size: 0.9rem;
+      padding: 35px 0;
+      border-radius: 5px;
+    }
+
+    .size-container {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    .bttn-back {
+      color: #333333;
+      text-decoration: underline;
+      padding: 0;
+      margin: 0;
+    }
+
+    .wrapper {
+      background-image: url("");
+      padding: 20px 5px 20px 5px;
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      background-size: cover;
+    }
+
+    .top-page .wrapper h3 {
+      font-size: .5rem;
+      font-weight: normal;
+    }
+
+    .page-header {
+      background-color: #434343;
+    }
+
+    .img-container {
+      margin-top: 45px;
+      border-style: none;
+    }
+
+    .song-name {
+      margin-top: 15px;
+      display: inline-block;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    .album-name {
+      margin: 10px 0 10px 0;
+      display: inline-block;
+      text-transform: lowercase;
+      color: white;
+      font-size: small;
+    }
+
+    .warning {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .main-bttn {
+      display: inline-block;
+      background-color: red;
+      text-decoration: none;
+      color: white;
+      margin: 5px;
+      padding: 15px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+
+    .more-music-bttn {
+      display: inline-block;
+      background-color: grey;
+      text-decoration: none;
+      color: white;
+      margin: 5px;
+      padding: 15px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 1.2rem;
+    }
+
+    .buttons-block {
+      margin: 0 auto;
+      max-width: 300px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .back-href-cont {
+      margin: 20px 0 20px 0;
+    }
+
+    .link-back {
+      color: whitesmoke;
+      text-decoration: underline;
+      font-size: 1.2rem;
+    }
+
+    .wrapper-text {
+      text-align: center;
+      font-size: 2rem;
+      margin: 0;
+      padding-right: 2rem;
+
+    }
+
+    .rules-link {
+      color: silver;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: inline-block;
+    }
+
+    .rules-block {
+      margin: 5%;
+      text-align: center;
+    }
+
+    .warning-cont {
+      text-align: center;
+      background-color: #a2a2a333;
+      max-width: 480px;
+      margin-top: 3%;
+      padding: 3%;
+      border-radius: 5px;
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .20);
+    }
+
+    .details {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .player {
+      margin-top: 3%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      background-color: #a2a2a333;
+      border-radius: 5px;
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .20);
+    }
+
+    .info-cont {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .now-playing {
+      font-size: 1rem;
+    }
+
+    .track-name-text {
+      margin: 1rem 0 0 0;
+      font-size: 1.2rem;
+      padding: 0 1rem 0 1rem;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .logo-cont {
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .voda-logo {
+      max-width: 32px;
+      max-height: 32px;
+      margin: .4rem 1.2rem 0 1rem;
+    }
+
+    .header-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+      color: #fafafa;
+      font-size: 0.9rem;
+      padding: 1rem 0;
+      border-radius: 5px;
+      display: flex;
+      justify-content: flex-start;
+
+    }
+
+    header {
+      margin: -1rem 0 0 0;
+    }
+
+
+    .track-artist-text {
+      margin: 1rem 0 1rem 0;
+      padding: 0 3% 0 3%;
+      font-size: 1rem;
+      color: white;
+      text-transform: uppercase;
+
+    }
+
+    .track-art-pic {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .track-art {
+      background-image: url("");
+      height: 160px;
+      border-radius: 5px;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .20);
+      padding-bottom: 2%;
+      margin: 0 2.5rem 1rem 2.5rem;
+    }
+
+    .playpause-track {
+      position: absolute;
+      transition: opacity .2s;
+    }
+
+    .slider_container {
+      margin-top: 35%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slider_container-vol {
+      margin-top: 10%;
+      margin-bottom: 3%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .seek_slider,
+    .volume_slider {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      height: 5px;
+      background: black;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .seek_slider::-webkit-slider-thumb,
+    .volume_slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      background: red;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .volume_slider::-webkit-slider-thumb {
+      width: 10px;
+      height: 10px;
+      background: red;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .seek_slider:hover,
+    .volume_slider:hover {
+      opacity: 1.0;
+    }
+
+    .seek_slider {
+      width: 60%;
+    }
+
+    .volume_slider {
+      width: 30%;
+      height: 3px;
+    }
+
+    .current-time,
+    .total-duration {
+      padding: 10px;
+    }
+
+    .vol_up,
+    .vol_down {
+      padding: 2px;
+    }
+
+    .general-slider-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: -6%;
+    }
+
+    .vol_up {
+      background-image: url("/asset/289321311333/image/goodok_volup2810");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 15px;
+      height: 15px;
+      margin-left: 3px;
+    }
+
+    .vol_down {
+      background-image: url("/asset/289321311333/image/goodok_voldown2810");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 15px;
+      height: 15px;
+    }
+  </style>
+
+</head>
+
+<body id="nc">
+<header class="page-header">
+  <div class="header-wrap">
+    <div class="logo-cont">
+      <img class="voda-logo" src="/content/image/289321311333/ncnd_branding_logo_126">
+      <h3 class="wrapper-text">GOOD'OK</h3>
+
+    </div>
+  </div>
+</header>
+<main>
+
+
+  <section class="info-cont">
+
+    <div class="player">
+
+      <div class="details">
+
+        <div class="track-name">
+          <h1 class="track-name-text">Track Name</h1>
+        </div>
+
+        <div class="track-arttist">
+          <h4 class="track-artist-text">Track Artist</h4>
+        </div>
+
+        <div id="i" class="track-art">
+
+          <div id="sound-check" class="playpause-track" onclick="playpauseTrack()">
+            <div class="pause_button"></div>
+          </div>
+
+          <!--                    <div class="slider_container">-->
+          <!--                        <div class="current-time">00:00</div>-->
+          <!--                        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">-->
+          <!--                        <div class="total-duration">00:00</div>-->
+          <!--                    </div>-->
+
+        </div>
+      </div>
+
+      <!--            <div class="general-slider-container">-->
+
+      <!--                <div class="slider_container-vol">-->
+      <!--                    <div class="vol_down"></div>-->
+      <!--                    <input type="range" min="0" max="100" value="99" class="volume_slider" onchange="setVolume()">-->
+      <!--                    <div class="vol_up"></div>-->
+      <!--                </div>-->
+      <!--            </div>-->
+    </div>
+
+    <div class="warning-cont">
+
+      <p class="warning">
+        Перші 7 днів безкоштовно.<br> Пропозиція діє до 16 листопада 2021
+      </p>
+      <div class="buttons-block">
+        <a href="/" class="main-bttn activation-url">Пiдключити</a>
+      </div>
+
+      <div class="back-href-cont">
+        <a href="#" class="bttn-back"
+           onclick="window.history.back();return false">Повернутися назад</a>
+      </div>
+    </div>
+    <div class="rules-block">
+      <a href="https://www.vodafone.ua/services/rozvaghy/goodok#umovy"
+         class="rules-link">Правила надання послуги</a>
+    </div>
+  </section>
+  <div style="display:none;">
+    <a id="url51" href="/sp/goodok?fail=1777&success=1775&v=ucell&code=156836"></a>
+    <a id="url52" href="/sp/goodok?fail=1777&success=1775&v=ucell&code=156837"></a>
+    <a id="url53" href="/sp/goodok?fail=1777&success=1775&v=ucell&code=156839"></a>
+    <a id="url54" href="/sp/goodok?fail=1777&success=1775&v=ucell&code=156840"></a>
+    <a id="url55" href="/sp/goodok?fail=1777&success=1775&v=ucell&code=156841"></a>
+  </div>
+</main>
+
+<footer class="page-footer">
+  <span class="copy">© Vodafone Ukraine</span>
+</footer>
+
+<script>
+  //music array
+  let param = new URLSearchParams(window.location.search).get('goodok');
+  //music array
+  if (!param) {
+    param = "51"
+  }
+  let track_list;
+  switch (param) {
+    case "51":
+      track_list = {
+        name: "Не Смогу",
+        artist: "VERBEE, KARA KROSS",
+        image: "/asset/289321311333/image/goodok_51_173",
+        path: "https://ivr.goodok.ucell.com.ua/content/eNozMzDQNzAw1AeRYKapsb6RoaleeWIZAElOBd8=.wav",
+        url: document.querySelector("#url51").href
+
+      };
+      break;
+    case "52":
+      track_list = {
+        name: "Она",
+        artist: "Natan",
+        image: "/asset/289321311333/image/goodok_52_173",
+        path: "https://ivr.goodok.ucell.com.ua/content/eNozMzDQNzAw1AeRYKapmb65hZleeWIZAEm7Be8=.wav",
+        url: document.querySelector("#url52").href
+      };
+      break;
+    case "53":
+      track_list = {
+        name: "А уже фсё",
+        artist: "MITCHEL",
+        image: "/asset/289321311333/image/goodok_53_173",
+        path: "https://ivr.goodok.ucell.com.ua/content/eNozMzDQNzAw1AeRYKapib6RhaleeWIZAEmBBec=.wav",
+        url: document.querySelector("#url53").href
+      };
+      break;
+    case "54":
+      track_list = {
+        name: "Piece Of Your Heart",
+        artist: "Goodboys, Meduza",
+        image: "/asset/289321311333/image/goodok_54_173",
+        path: "https://ivr.goodok.ucell.com.ua/content/eNozMzDQNzAw1AeRYKaJgb6RkaleeWIZAEkvBdw=.wav",
+        url: document.querySelector("#url54").href
+      };
+      break;
+    case "55":
+      track_list = {
+        name: "Венера-Юпитер",
+        artist: "Ваня Дмитриенко",
+        image: "/asset/289321311333/image/goodok_55_173",
+        path: "https://ivr.goodok.ucell.com.ua/content/eNozMzDQNzAw1AeRYKapib6RpbleeWIZAEmRBeo=.wav",
+        url: document.querySelector("#url55").href
+      };
+      break;
+  }
+  //
+
+
+  //Random section
+
+  let curr_track = document.createElement('audio');
+  const random = Math.floor(Math.random() * track_list.length);
+
+  let track_art = document.querySelector(".track-art");
+  let track_name = document.querySelector(".track-name-text");
+  let track_artist = document.querySelector(".track-artist-text")
+  let track_url = document.querySelector(".activation-url");
+
+
+  let playpause_btn = document.querySelector(".playpause-track");
+
+  let seek_slider = document.querySelector(".seek_slider");
+  let volume_slider = document.querySelector(".volume_slider");
+  let curr_time = document.querySelector(".current-time");
+  let total_duration = document.querySelector(".total-duration");
+
+  let track_index = random;
+  let isPlaying = false;
+  let updateTimer;
+
+  function loadTrack(track_index) {
+    clearInterval(updateTimer);
+    // resetValues();
+
+    curr_track.src = track_list.path;
+    curr_track.load();
+
+    track_art.style.backgroundImage = "url(" + track_list.image + ")";
+    track_name.textContent = track_list.name;
+    track_artist.textContent = track_list.artist;
+    track_url.href = track_list.url
+
+    // updateTimer = setInterval(seekUpdate, 1000);
+  }
+
+  // function resetValues() {
+  //     curr_time.textContent = "00:00";
+  //     total_duration.textContent = "00:00";
+  //     seek_slider.value = 0;
+  // }
+
+  loadTrack(track_index);
+
+  function playpauseTrack() {
+    if (!isPlaying) playTrack();
+    else pauseTrack();
+  }
+
+  function playTrack() {
+    curr_track.play();
+    isPlaying = true;
+    playpause_btn.innerHTML = '<div class="play_button"></div>';
+  }
+
+  function pauseTrack() {
+    curr_track.pause();
+    isPlaying = false;
+    playpause_btn.innerHTML = '<div class="pause_button"></div>';
+  }
+
+
+  function seekTo() {
+    seekto = curr_track.duration * (seek_slider.value / 100);
+    curr_track.currentTime = seekto;
+  }
+
+  function setVolume() {
+    curr_track.volume = volume_slider.value / 100;
+  }
+
+  // function seekUpdate() {
+  //     let seekPosition = 0;
+  //
+  //     if (!isNaN(curr_track.duration)) {
+  //
+  //         seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+  //         seek_slider.value = seekPosition;
+  //
+  //
+  //         let currentMinutes = Math.floor(curr_track.currentTime / 60);
+  //         let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+  //         let durationMinutes = Math.floor(curr_track.duration / 60);
+  //         let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+  //
+  //         if (currentSeconds < 10) {
+  //             currentSeconds = "0" + currentSeconds;
+  //         }
+  //         if (durationSeconds < 10) {
+  //             durationSeconds = "0" + durationSeconds;
+  //         }
+  //         if (currentMinutes < 10) {
+  //             currentMinutes = "0" + currentMinutes;
+  //         }
+  //         if (durationMinutes < 10) {
+  //             durationMinutes = "0" + durationMinutes;
+  //         }
+  //
+  //         curr_time.textContent = currentMinutes + ":" + currentSeconds;
+  //         total_duration.textContent = durationMinutes + ":" + durationSeconds;
+  //     }
+  // }
+
+  //Autoplay
+  // window.onload = playTrack();
+</script>
